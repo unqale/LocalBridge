@@ -174,7 +174,7 @@ Issues and pull requests are welcome. If you found a bug, please include your pl
 
 ## 📄 License
 
-Add a license file before publishing (for example [MIT](https://choosealicense.com/licenses/mit/)) and put its name here.
+([MIT](https://choosealicense.com/licenses/mit/))
 
 ---
 
