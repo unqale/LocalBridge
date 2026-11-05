@@ -152,46 +152,29 @@ The link only works on the same local network and only while sharing is on. It s
 
 The full history is also available in the app under **Settings → About → What's new**.
 
-### `1.3.0` — More Settings, More Control
-> A more customizable experience with expanded settings and quality-of-life improvements.
+### `1.3.0` — More Settings
+- 🎨 AMOLED mode, 11 accent colors & text size
+- 📡 Radar, header & visibility options
+- 🔒 Hidden IPs & trusted devices
+- 📳 Haptic feedback
+- 👥 Sender grouping & overwrite option
+- ⚙️ Request timeout & link auto-stop
+- 📜 History size & in-app changelog
 
-- 🎨 **AMOLED Mode** — A true dark experience with a deeper black interface.
-- 🔠 **Text Customization** — Adjustable text size.
-- 📡 **Radar & Header Options** — More control over device discovery and interface elements.
-- 🔒 **Privacy Controls** — Hide IP addresses and manage device visibility.
-- 📳 **Haptic Feedback** — Optional vibration feedback.
-- 🌈 **11 Accent Colors** — Personalize the interface with a wider color palette.
-- 🛡️ **Trusted Devices** — Manage devices you trust.
-- 👥 **Sender Grouping** — Organize transfers by sender.
-- 📂 **Overwrite Option** — Choose how existing files are handled.
-- ⏱️ **Request Timeout** — Configure connection request timeouts.
-- 🔗 **Link Auto-Stop** — Automatically stop link sharing.
-- 📜 **History Settings** — Customize transfer history limits.
-- 📝 **In-App Changelog** — View updates directly inside the app.
+### `1.2.0` — Link Sharing
+- 🔗 Share files via links with PIN protection
+- ✅ Access approval system
+- 🌍 English interface
 
-### `1.2.0` — Link Sharing & English Support
-> Introducing a new way to share files beyond your local network.
+### `1.1.0` — LocalBridge Redesign
+- ✨ Material 3 interface
+- 🗂️ Tab navigation & transfer history
+- ⚙️ Initial settings
 
-- 🔗 **Link Sharing** — Share files through generated links.
-- 🔐 **PIN Protection** — Secure shared links with a PIN.
-- ✅ **Approval System** — Require approval before accessing shared files.
-- 🌍 **English Interface** — Full English language support.
-
-### `1.1.0` — The LocalBridge Redesign
-> A fresh identity with a completely revamped interface.
-
-- ✨ **New Identity** — LocalDrop becomes LocalBridge.
-- 🎨 **Material 3 Design** — A cleaner and more modern visual experience.
-- 🗂️ **Tabbed Navigation** — A more organized interface.
-- 📜 **Transfer History** — Keep track of previous transfers.
-- ⚙️ **Initial Settings** — Introducing the first customization options.
-
-### `1.0.0` — The Beginning of LocalDrop
-> The first release, built around simple and seamless local file sharing.
-
-- 📡 **Device Discovery** — Automatically discover devices on your local network.
-- 📤 **File Transfers** — Send files between discovered devices.
-- ✅ **Accept / Decline** — Choose whether to accept incoming transfers.
+### `1.0.0` — LocalBridge
+- 📡 Device discovery
+- 📤 Local file transfers
+- ✅ Accept / decline requests
 
 ---
 
