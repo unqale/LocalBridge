@@ -61,8 +61,8 @@ Go to the [**Releases**](https://github.com/unqale/LocalBridge/releases/latest) 
 
 | Platform | File | Notes |
 |----------|------|-------|
-| Android | `LocalBridge-vX.Y.Z-android-arm64-v8a.apk` | Works on almost all modern phones. Use `armeabi-v7a` for older 32-bit phones. |
-| Windows | `LocalBridge-vX.Y.Z-windows.zip` | Unzip and run `localbridge.exe`. No installer needed. |
+| Android | `LocalBridge-v1.3.0-android-arm64-v8a.apk` | Works on almost all modern phones. Use `armeabi-v7a` for older 32-bit phones. |
+| Windows | `LocalBridge-v1.3.0-windows.zip` | Unzip and run `localbridge.exe`. No installer needed. |
 
 ### Installing on Android
 1. Download the APK on your phone.
