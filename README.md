@@ -4,8 +4,8 @@
 
 **Send files between your phone and PC over Wi-Fi. No cloud, no cables, no accounts.**
 
-[![Release](https://img.shields.io/github/v/release/YOUR_USERNAME/localbridge?style=for-the-badge)](https://github.com/YOUR_USERNAME/localbridge/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/YOUR_USERNAME/localbridge/total?style=for-the-badge)](https://github.com/YOUR_USERNAME/localbridge/releases)
+[![Release](https://img.shields.io/github/v/release/unqale/LocalBridge?style=for-the-badge)](https://github.com/unqale/LocalBridge/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/unqale/LocalBridge/total?style=for-the-badge)](https://github.com/unqale/LocalBridge/releases)
 [![Built with Flutter](https://img.shields.io/badge/Built%20with-Flutter-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
 
 [Download](#-download) · [Features](#-features) · [How to use](#-how-to-use) · [Build from source](#-build-from-source) · [FAQ](#-troubleshooting)
@@ -57,7 +57,7 @@ It also has a **Share via link** mode: pick some files, get a link, and anyone o
 
 ## 📥 Download
 
-Go to the [**Releases**](https://github.com/YOUR_USERNAME/localbridge/releases/latest) page and download the file for your device:
+Go to the [**Releases**](https://github.com/unqale/LocalBridge/releases/latest) page and download the file for your device:
 
 | Platform | File | Notes |
 |----------|------|-------|
@@ -133,7 +133,7 @@ git push origin v1.3.0
 - The **port** must be the same on both devices (default `53317`).
 
 **"Could not start server" message**
-Another app is using the port. LocalSend uses the same default port (`53317`), so close it or change the port in **Settings → Network → Port** on both devices.
+Another app is using the port. We uses the same default port (`53317`), so close it or change the port in **Settings → Network → Port** on both devices.
 
 **Android says it can't save to Download**
 Newer Android versions restrict writing to shared folders. LocalBridge then falls back to its own app folder. You can set another path under *Settings → Receive → Save folder*.
