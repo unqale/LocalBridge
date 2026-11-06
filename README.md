@@ -152,6 +152,14 @@ The link only works on the same local network and only while sharing is on. It s
 
 The full history is also available in the app under **Settings → About → What's new**.
 
+## ✨ `1.4.0` — New Langs and Security Protections
+
+- 🌍 Multi-language support (English, Turkish & Russian)
+- 🔗 One-time download mode for link sharing
+- 📁 Allowed file extension filter
+- 🔒 Enhanced security & sharing controls
+- ⚙️ Improved sharing experience
+
 ### `1.3.0` — More Settings
 - 🎨 AMOLED mode, 11 accent colors & text size
 - 📡 Radar, header & visibility options
@@ -164,7 +172,6 @@ The full history is also available in the app under **Settings → About → Wha
 ### `1.2.0` — Link Sharing
 - 🔗 Share files via links with PIN protection
 - ✅ Access approval system
-- 🌍 English interface
 
 ### `1.1.0` — LocalBridge Redesign
 - ✨ Material 3 interface
