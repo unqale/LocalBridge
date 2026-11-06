@@ -1,106 +1,57 @@
-<div align="center">
-
 # LocalBridge
 
-**Send files between your phone and PC over Wi-Fi. No cloud, no cables, no accounts.**
+Fast, no-account file sharing between devices on the same Wi-Fi. No cloud, no cable, no sign-up: files go straight from one device to another over your local network.
 
-[![Release](https://img.shields.io/github/v/release/unqale/LocalBridge?style=for-the-badge)](https://github.com/unqale/LocalBridge/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/unqale/LocalBridge/total?style=for-the-badge)](https://github.com/unqale/LocalBridge/releases)
-[![Built with Flutter](https://img.shields.io/badge/Built%20with-Flutter-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
+**Version 2.0.0** · Windows · Android · macOS · Linux · iOS (experimental)
 
-[Download](#-download) · [Features](#-features) · [How to use](#-how-to-use) · [Build from source](#-build-from-source) · [FAQ](#-troubleshooting)
+---
 
-</div>
+## Features
 
-<!-- Add screenshots here, e.g.
-<p align="center">
-  <img src="docs/screenshots/devices.png" width="260">
-  <img src="docs/screenshots/history.png" width="260">
-  <img src="docs/screenshots/settings.png" width="260">
-</p>
--->
+- **Automatic device discovery**: nearby devices show up on a live radar; tap one to send.
+- **Fast peer-to-peer transfer** over your local network, with real-time progress.
+- **Share via link**: anyone on the same Wi-Fi can download from a browser, no app needed.
+  - Optional PIN, PIN attempt limit and approval prompt before each download
+  - One-time download, download limit, auto-stop timer
+  - Allowed file extension filter
+  - Custom message on the download page
+  - Optional QR code and automatic link copying
+- **Trusted devices**: mark a device with a star to auto-accept its transfers.
+- **Transfer history** with Sent / Received filters and totals.
+- **Custom save folder**, group-by-sender, overwrite or auto-number.
+- **Power switch**: turn LocalBridge off to stop scanning and become invisible.
+- **Responsive desktop layout**: side menu, multi-column pages, cursor glow and hover effects.
+- **Languages**: English, Türkçe, Русский.
+- Material 3, accent colors, adjustable text size.
 
-## What is LocalBridge?
+## How it works
 
-LocalBridge finds other devices running LocalBridge on the same Wi-Fi network and lets you send files to them directly. Files travel straight from one device to the other over your local network. Nothing is uploaded to a server and you don't need an internet connection.
+Every instance runs a small HTTP server (default port `53317`):
 
-It also has a **Share via link** mode: pick some files, get a link, and anyone on your Wi-Fi can download them from a normal browser, even if they don't have the app.
+| Endpoint | Purpose |
+|---|---|
+| `GET /api/info` | Discovery: returns app id, device name, platform |
+| `POST /api/send-request` | Sender asks the receiver for permission |
+| `PUT /api/upload` | File upload after the request is accepted |
+| `GET /s/<token>` | Browser download page for link sharing |
 
-## ✨ Features
+Discovery scans your local `/24` subnet and probes `/api/info`. Both devices must use the same port.
 
-**Sending and receiving**
-- Automatic device discovery on your local network
-- Send multiple files at once with a live progress bar
-- The receiver gets an accept / decline prompt before anything is saved
-- Trusted devices: star a device to accept its files automatically
-- Auto-accept mode for networks you fully trust
-- Files never overwrite each other by default (`photo.jpg`, `photo (1).jpg`, ...)
+## Getting started
 
-**Share via link**
-- Share files with any browser on your Wi-Fi, no app needed on the other side
-- Optional PIN
-- Optional approval prompt for every browser that opens the link
-- Auto-stop timer (5 min to 3 hours) or share until you stop it
+### Requirements
+- [Flutter](https://docs.flutter.dev/get-started/install) (stable, Dart 3+)
 
-**Interface**
-- Material 3 design with an animated radar header
-- Light, dark and pure black (AMOLED) themes
-- 11 accent colors
-- Adjustable text size, compact header, hide IP addresses
-- Transfer history
+### Dependencies
+```yaml
+dependencies:
+  file_picker: any
+  path_provider: any
+  path: any
+  url_launcher: ^6.3.0
+```
 
-**Settings**
-- Device name, save folder, group received files by sender
-- Overwrite behaviour, request timeout
-- Scan interval, port, visibility to other devices
-- History size, haptic feedback, reset to defaults
-
-## 📥 Download
-
-Go to the [**Releases**](https://github.com/unqale/LocalBridge/releases/latest) page and download the file for your device:
-
-| Platform | File | Notes |
-|----------|------|-------|
-| Android | `LocalBridge-v1.3.0-android-arm64-v8a.apk` | Works on almost all modern phones. Use `armeabi-v7a` for older 32-bit phones. |
-| Windows | `LocalBridge-v1.3.0-windows.zip` | Unzip and run `localbridge.exe`. No installer needed. |
-
-### Installing on Android
-1. Download the APK on your phone.
-2. Open it. Android will ask you to allow installing apps from your browser or file manager. Allow it for this install.
-3. Open LocalBridge.
-
-### Installing on Windows
-1. Unzip the folder anywhere (keep all the files together).
-2. Run the `.exe`.
-3. If **Windows Defender SmartScreen** shows a warning, click **More info → Run anyway**. The app isn't code-signed.
-4. When **Windows Firewall** asks, allow access on **Private networks**. Without this, other devices can't reach your PC.
-
-## 🚀 How to use
-
-### Send files to another device
-1. Open LocalBridge on both devices and connect them to the **same Wi-Fi**.
-2. The other device appears under **Nearby devices** within a few seconds.
-3. Tap **Send** and choose your files.
-4. The other device taps **Accept**. The transfer starts.
-
-### Share files with a link
-1. On the **Devices** tab, tap **Share** on the *Share via link* card and choose your files.
-2. Copy the link and open it in any browser on the same Wi-Fi.
-3. If approval is on, accept the request that pops up in LocalBridge.
-4. Tap **Stop sharing** when you're done.
-
-### Where do received files go?
-- **Windows:** your Downloads folder, in a `LocalBridge` subfolder
-- **Android:** `Download/LocalBridge`, or the app's own folder if Android doesn't allow writing there
-
-You can change the folder in **Settings → Receive → Save folder**.
-
-## 🛠 Build from source
-
-You only need this if you want to modify the app. Regular users should use the [downloads](#-download) above.
-
-**Requirements:** [Flutter SDK](https://docs.flutter.dev/get-started/install) (stable channel)
-
+### Run
 ```bash
 git clone https://github.com/unqale/localbridge.git
 cd localbridge
@@ -108,99 +59,50 @@ flutter pub get
 flutter run
 ```
 
-Build release versions:
-
+### Build
 ```bash
-flutter build apk --release --split-per-abi   # Android
-flutter build windows --release               # Windows
+flutter build windows
+flutter build apk --release
+flutter build macos
+flutter build linux
 ```
 
-### Automatic releases
-Pushing a version tag builds the Android APKs and the Windows zip on GitHub Actions and attaches them to a new release:
+## Usage
 
-```bash
-git tag v1.3.0
-git push origin v1.3.0
-```
+1. Open LocalBridge on both devices (same Wi-Fi, same port).
+2. The other device appears on the radar. Tap it or press **Send** and pick files.
+3. The receiver accepts (or has you in *Trusted devices* for auto-accept).
+4. To share with devices that don't have the app, use **Share via link** and open the link (or scan the QR code) in a browser.
 
-## 🔧 Troubleshooting
+> **Windows:** if the firewall asks, allow LocalBridge on **Private networks**.
 
-**The other device doesn't show up**
-- Both devices must be on the same Wi-Fi network.
-- Some routers have *AP isolation* / *client isolation* turned on, which blocks devices from talking to each other. Turn it off in your router settings, or try a phone hotspot.
-- On Windows, allow LocalBridge through the firewall on **Private networks**.
-- Make sure *Settings → Network → Visible to other devices* is on.
-- The **port** must be the same on both devices (default `53317`).
+## Security notes
 
-**"Could not start server" message**
-Another app is using the port. We uses the same default port (`53317`), so close it or change the port in **Settings → Network → Port** on both devices.
+LocalBridge is designed for trusted home or office networks.
 
-**Android says it can't save to Download**
-Newer Android versions restrict writing to shared folders. LocalBridge then falls back to its own app folder. You can set another path under *Settings → Receive → Save folder*.
+- Transfers use plain HTTP, they are **not encrypted**. Don't use it on public Wi-Fi.
+- Link-share PINs are for casual access control only.
+- The QR code image is generated by an online service (`api.qrserver.com`), so the share link is sent to that service when a QR code is displayed. Turn QR off in the sharing settings if that matters to you.
+- Turn the power switch off (or disable *Visible to other devices*) when you don't want to be found.
 
-**A shared link doesn't open**
-The link only works on the same local network and only while sharing is on. It stops when you tap *Stop sharing*, when the auto-stop timer ends, or when you close the app.
+## Settings storage
 
-## 🔒 Privacy and security
+Settings and history are stored as JSON (`settings.json`, `history.json`) in the app support directory.
 
-- No accounts, no analytics, no servers. Everything stays on your local network.
-- Transfers use plain HTTP on your local network and are **not encrypted**. Anyone who can sniff traffic on the same Wi-Fi could see them. Use LocalBridge on networks you trust, not on public Wi-Fi.
-- Trusted devices are matched by **device name**, which can be imitated by someone else on the same network. Only star your own devices, and keep *Auto-accept* off on shared networks.
-- Link sharing: use the PIN and approval options if others are on your network.
+## Changelog
 
-## 📋 Changelog
+See **Settings → About → What's new** in the app, or the `kChangelog` list in `main.dart`.
 
-The full history is also available in the app under **Settings → About → What's new**.
+## Contributing
 
-## ✨ `1.4.0` — New Langs and Security Protections
+Issues and pull requests are welcome. Translations are especially appreciated; add a language to `L10n.keys` and `AppLang`.
 
-- 🌍 Multi-language support (English, Turkish & Russian)
-- 🔗 One-time download mode for link sharing
-- 📁 Allowed file extension filter
-- 🔒 Enhanced security & sharing controls
-- ⚙️ Improved sharing experience
+## Author
 
-### `1.3.0` — More Settings
-- 🎨 AMOLED mode, 11 accent colors & text size
-- 📡 Radar, header & visibility options
-- 🔒 Hidden IPs & trusted devices
-- 📳 Haptic feedback
-- 👥 Sender grouping & overwrite option
-- ⚙️ Request timeout & link auto-stop
-- 📜 History size & in-app changelog
-
-### `1.2.0` — Link Sharing
-- 🔗 Share files via links with PIN protection
-- ✅ Access approval system
-
-### `1.1.0` — LocalBridge Redesign
-- ✨ Material 3 interface
-- 🗂️ Tab navigation & transfer history
-- ⚙️ Initial settings
-
-### `1.0.0` — LocalBridge
-- 📡 Device discovery
-- 📤 Local file transfers
-- ✅ Accept / decline requests
+Made by [unqale](https://github.com/unqale)
 
 ---
 
-<sub>More improvements, refinements and features are on the way.</sub>
+## Türkçe
 
-## 🗺 Platforms
-
-Tested on **Android** and **Windows**. The code is Flutter, so Linux and macOS builds may work with little or no change but haven't been tested.
-
-## 🤝 Contributing
-
-Issues and pull requests are welcome. If you found a bug, please include your platform, the app version (*Settings → About*), and what you expected to happen.
-
-## 📄 License
-
-([MIT](https://choosealicense.com/licenses/mit/))
-
----
-
-<div align="center">
-LocalBridge is an independent project and is not affiliated with LocalSend or any other file transfer app.
-</div>
+LocalBridge, aynı Wi-Fi'daki cihazlar arasında hesap, bulut veya kablo olmadan hızlı dosya aktarımı yapar. Yakındaki cihazlar radarda görünür, dokunarak dosya gönderirsin. Uygulaması olmayan cihazlar için tarayıcıdan indirilebilen bağlantı (PIN, QR kod, indirme limiti ve daha fazlası) oluşturabilirsin. Aktarımlar şifrelenmez, yalnızca güvendiğin ağlarda kullan.
