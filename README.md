@@ -102,7 +102,3 @@ Issues and pull requests are welcome. Translations are especially appreciated; a
 Made by [unqale](https://github.com/unqale)
 
 ---
-
-## Türkçe
-
-LocalBridge, aynı Wi-Fi'daki cihazlar arasında hesap, bulut veya kablo olmadan hızlı dosya aktarımı yapar. Yakındaki cihazlar radarda görünür, dokunarak dosya gönderirsin. Uygulaması olmayan cihazlar için tarayıcıdan indirilebilen bağlantı (PIN, QR kod, indirme limiti ve daha fazlası) oluşturabilirsin. Aktarımlar şifrelenmez, yalnızca güvendiğin ağlarda kullan.
