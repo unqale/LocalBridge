@@ -1,0 +1,76 @@
+name: Release
+
+# Runs when you push a tag like v2.1.0
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .   # change to "app" if your Flutter project lives in app/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release --split-per-abi
+      - name: Rename APKs
+        run: |
+          mkdir -p dist
+          for f in build/app/outputs/flutter-apk/app-*-release.apk; do
+            name=$(basename "$f" | sed 's/app-//; s/-release//; s/.apk//')
+            cp "$f" "dist/LocalBridge-${GITHUB_REF_NAME}-android-${name}.apk"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android
+          path: ${{ github.workspace }}/dist/*.apk
+
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: .   # change to "app" if your Flutter project lives in app/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build windows --release
+      - name: Zip
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath "dist/LocalBridge-$env:GITHUB_REF_NAME-windows.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: ${{ github.workspace }}/dist/*.zip
+
+  release:
+    needs: [android, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*
+          generate_release_notes: true
