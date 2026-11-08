@@ -2,7 +2,7 @@ name: localbridge
 description: "LocalBridge - yerel ağda dosya paylaşımı."
 publish_to: 'none'
 
-version: 2.1.0+1
+version: 3.0.0+1
 
 environment:
   sdk: ^3.13.7

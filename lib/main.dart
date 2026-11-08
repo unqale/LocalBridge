@@ -13,7 +13,7 @@ import 'package:url_launcher/url_launcher.dart';
 const int kDefaultPort = 53317;
 const String kAppId = 'localbridge';
 const String kAppName = 'LocalBridge';
-const String kVersion = '2.1.0';
+const String kVersion = '3.0.0';
 
 /// Brand colors used by the bridge logo and the startup animation.
 const Color kBrand1 = Color(0xFFC4B5FD);
@@ -26,7 +26,7 @@ const double kMaxContentWidth = 600;
 const double kWideBreakpoint = 900;
 
 /// Widest the content area gets on huge monitors.
-const double kMaxWideWidth = 1240;
+const double kMaxWideWidth = 2200;
 
 /// Pages switch to two columns when their own area is at least this wide.
 const double kTwoColWidth = 700;
@@ -44,11 +44,11 @@ class ChangelogItem {
 
 const List<ChangelogItem> kChangelog = [
   ChangelogItem(
-    '2.1.0',
+    '3.0.0',
     {
-      AppLang.english: 'Last Update: Faster Scanning, Smarter Glow, Fuller Side Menu',
-      AppLang.turkish: 'Son Güncelleme: Daha Hızlı Tarama, Daha Akıllı Işık, Daha Dolu Yan Menü',
-      AppLang.russian: 'Последнее обновление: быстрее сканирование, умнее подсветка, полнее боковое меню',
+      AppLang.english: 'Last Update 3.0: Faster Scanning, New Settings, New Look',
+      AppLang.turkish: 'Son Güncelleme 3.0: Daha Hızlı Tarama, Yeni Ayarlar, Yeni Görünüm',
+      AppLang.russian: 'Последнее обновление 3.0: быстрее сканирование, новые настройки, новый вид',
     },
     {
       AppLang.english: [
@@ -58,6 +58,10 @@ const List<ChangelogItem> kChangelog = [
         "New Scan speed setting (Balanced, Fast, Turbo): faster scans find devices sooner but use more network and battery",
         "Smarter scanning: VPN, virtual machine and Docker networks are skipped (new Scan VPN and virtual networks setting), auto scan only re-checks known devices between full sweeps, and devices no longer flicker when one scan misses them",
         "Share links now list only your real network addresses",
+        "Eleven new settings: status bar on/off, light follows the mouse, background glow strength, 24-hour clock, sort devices (name, address, found order), sound when a transfer ends, confirm before sending, start turned on, confirm before clearing history, hover effects and side menu stats",
+        "New look: a redesigned What's new window, a nicer Devices header, What's new and Made by links at the bottom of the side menu, the Turn on / Turn off button now sits at the top right of the Devices page, and the scroll bar sits at the edge of the window",
+        "Settings page redesigned for big windows: category list on the left, a search box for settings and a Reset preferences button",
+        "New status bar at the bottom of the window with the connection state, server port and your address",
         "The light around the mouse cursor is smaller and softer",
         "The background glow now follows your mouse smoothly and breathes gently where the cursor rests",
         "Settings rows now match the new look: hover and press effects, rounded icon badges, new switches, sliders, menus and text fields",
@@ -75,6 +79,10 @@ const List<ChangelogItem> kChangelog = [
         "Yeni Tarama hızı ayarı (Dengeli, Hızlı, Turbo): daha hızlı tarama cihazları daha çabuk bulur ama daha fazla ağ ve pil kullanır",
         "Daha akıllı tarama: VPN, sanal makine ve Docker ağları atlanıyor (yeni VPN ve sanal ağları tara ayarı), otomatik tarama tam taramalar arasında yalnızca bilinen cihazları kontrol ediyor ve bir tarama cihazı kaçırınca cihazlar artık listeden titreyerek kaybolmuyor",
         "Paylaşım bağlantıları artık yalnızca gerçek ağ adreslerini listeliyor",
+        "On bir yeni ayar: durum çubuğunu aç/kapat, ışık fareyi takip etsin, arka plan parlama gücü, 24 saat biçimi, cihazları sırala (isim, adres, bulunma sırası), aktarım bitince ses, göndermeden önce onay, açık başlat, geçmişi silmeden önce onay, üzerine gelme efektleri ve yan menü istatistikleri",
+        "Yeni görünüm: yenilenen Yenilikler penceresi, daha güzel Cihazlar başlığı, yan menünün altında Yenilikler ve Made by bağlantıları, Aç / Kapat düğmesi artık Cihazlar sayfasının sağ üstünde ve kaydırma çubuğu pencerenin kenarında",
+        "Ayarlar sayfası büyük pencereler için yenilendi: solda kategori listesi, ayar arama kutusu ve Ayarları sıfırla düğmesi",
+        "Pencerenin altında bağlantı durumu, sunucu portu ve adresini gösteren yeni durum çubuğu",
         "Fare imlecinin etrafındaki ışık daha küçük ve daha yumuşak",
         "Arka plan ışığı artık fareni akıcı şekilde takip ediyor ve imlecin durduğu yerde hafifçe nefes alıyor",
         "Ayar satırları yeni görünüme uyumlu: üzerine gelme ve basma efektleri, yuvarlak ikon rozetleri, yeni anahtarlar, kaydırıcılar, menüler ve yazı alanları",
@@ -92,6 +100,10 @@ const List<ChangelogItem> kChangelog = [
         "Новая настройка Скорость сканирования (Сбалансированная, Быстрая, Турбо): быстрое сканирование находит устройства раньше, но использует больше сети и батареи",
         "Умнее сканирование: сети VPN, виртуальных машин и Docker пропускаются (новая настройка Сканировать VPN и виртуальные сети), автоматическое сканирование между полными проходами проверяет только известные устройства, а устройства больше не мигают в списке, если один проход их пропустил",
         "Ссылки для раздачи теперь показывают только реальные сетевые адреса",
+        "Одиннадцать новых настроек: строка состояния вкл/выкл, свет следует за мышью, сила свечения фона, 24-часовой формат, сортировка устройств (имя, адрес, порядок обнаружения), звук по окончании передачи, подтверждение отправки, запуск включённым, подтверждение очистки истории, эффекты наведения и статистика в боковом меню",
+        "Новый вид: переработанное окно «Что нового», более красивый заголовок устройств, ссылки «Что нового» и Made by внизу бокового меню, кнопка включения и выключения теперь вверху справа на странице устройств, а полоса прокрутки у края окна",
+        "Страница настроек переработана для больших окон: список категорий слева, поиск по настройкам и кнопка сброса настроек",
+        "Новая строка состояния внизу окна: состояние подключения, порт сервера и ваш адрес",
         "Свет вокруг курсора мыши стал меньше и мягче",
         "Фоновое свечение теперь плавно следует за мышью и мягко «дышит» там, где остановился курсор",
         "Строки настроек в новом стиле: эффекты наведения и нажатия, круглые значки, новые переключатели, ползунки, меню и поля ввода",
@@ -453,6 +465,44 @@ class L10n {
       'bootOff': 'Off',
       'bootQuick': 'Quick',
       'bootFull': 'Full',
+      'searchSettings': 'Search settings...',
+      'resetPrefs': 'Reset preferences',
+      'noResults': 'No settings found',
+      'statusConnected': 'connected',
+      'statusOffline': 'Offline',
+      'statusScanning': 'Scanning...',
+      'statusServer': 'Server',
+      'subLanguage': 'Choose the language of the app.',
+      'subAppearance': 'Colors, text size, startup and how the app looks.',
+      'subReceive': 'Where files go and who may send you files.',
+      'subLink': 'Options for sharing files with a link.',
+      'subNetwork': 'Visibility, scanning and port.',
+      'subHistory': 'Keep or clear the list of transfers.',
+      'subAbout': 'Version, changelog and reset.',
+      'statusBar': 'Status bar',
+      'statusBarDesc': 'Show the bar at the bottom of big windows',
+      'mouseGlow': 'Light follows the mouse',
+      'mouseGlowDesc': 'A soft glow under the mouse cursor',
+      'glowLevel': 'Background glow',
+      'use24h': '24-hour clock',
+      'use24hDesc': 'Off: show times with AM and PM',
+      'sortDevices': 'Sort devices',
+      'sortName': 'Name',
+      'sortIp': 'Address',
+      'sortFound': 'Found order',
+      'soundDone': 'Sound when a transfer ends',
+      'soundDoneDesc': 'Play a short sound after sending or receiving',
+      'confirmSend': 'Confirm before sending',
+      'confirmSendDesc': 'Ask before files are sent to a device',
+      'sendConfirm': 'Send to {n}?',
+      'startOnline': 'Start turned on',
+      'startOnlineDesc': 'Off: LocalBridge stays hidden until you press the power button',
+      'confirmClear': 'Confirm before clearing history',
+      'confirmClearDesc': 'Ask before the transfer list is deleted',
+      'hoverFx': 'Hover effects',
+      'hoverFxDesc': 'Cards grow and glow when the mouse is over them',
+      'railStats': 'Side menu statistics',
+      'railStatsDesc': 'Show nearby, sent and received counts in the side menu',
       'port': 'Port',
 
       'saveHistory': 'Save history',
@@ -592,6 +642,44 @@ class L10n {
       'bootOff': 'Kapalı',
       'bootQuick': 'Kısa',
       'bootFull': 'Uzun',
+      'searchSettings': 'Ayarlarda ara...',
+      'resetPrefs': 'Ayarları sıfırla',
+      'noResults': 'Ayar bulunamadı',
+      'statusConnected': 'bağlı',
+      'statusOffline': 'Kapalı',
+      'statusScanning': 'Taranıyor...',
+      'statusServer': 'Sunucu',
+      'subLanguage': 'Uygulamanın dilini seç.',
+      'subAppearance': 'Renkler, yazı boyutu, açılış ve uygulamanın görünümü.',
+      'subReceive': 'Dosyaların nereye gideceği ve kimlerin dosya gönderebileceği.',
+      'subLink': 'Dosyaları bağlantı ile paylaşma seçenekleri.',
+      'subNetwork': 'Görünürlük, tarama ve port.',
+      'subHistory': 'Aktarım listesini sakla veya temizle.',
+      'subAbout': 'Sürüm, değişiklik günlüğü ve sıfırlama.',
+      'statusBar': 'Durum çubuğu',
+      'statusBarDesc': 'Büyük pencerelerde alttaki çubuğu göster',
+      'mouseGlow': 'Işık fareyi takip etsin',
+      'mouseGlowDesc': 'Fare imlecinin altında yumuşak bir parlama',
+      'glowLevel': 'Arka plan parlaması',
+      'use24h': '24 saat biçimi',
+      'use24hDesc': 'Kapalı: saatler ÖÖ/ÖS ile gösterilir',
+      'sortDevices': 'Cihazları sırala',
+      'sortName': 'İsim',
+      'sortIp': 'Adres',
+      'sortFound': 'Bulunma sırası',
+      'soundDone': 'Aktarım bitince ses çal',
+      'soundDoneDesc': 'Gönderme veya alma sonrası kısa bir ses çalar',
+      'confirmSend': 'Göndermeden önce onayla',
+      'confirmSendDesc': 'Dosyalar bir cihaza gönderilmeden önce sorar',
+      'sendConfirm': '{n} cihazına gönderilsin mi?',
+      'startOnline': 'Açık başlat',
+      'startOnlineDesc': 'Kapalı: güç düğmesine basana kadar LocalBridge gizli kalır',
+      'confirmClear': 'Geçmişi silmeden önce onayla',
+      'confirmClearDesc': 'Aktarım listesi silinmeden önce sorar',
+      'hoverFx': 'Üzerine gelme efektleri',
+      'hoverFxDesc': 'Fare üzerine gelince kartlar büyür ve parlar',
+      'railStats': 'Yan menü istatistikleri',
+      'railStatsDesc': 'Yan menüde yakındaki, gönderilen ve alınan sayılarını göster',
       'port': 'Port',
 
       'saveHistory': 'Geçmişi kaydet',
@@ -731,6 +819,44 @@ class L10n {
       'bootOff': 'Выкл',
       'bootQuick': 'Короткая',
       'bootFull': 'Полная',
+      'searchSettings': 'Поиск настроек...',
+      'resetPrefs': 'Сбросить настройки',
+      'noResults': 'Настройки не найдены',
+      'statusConnected': 'подключено',
+      'statusOffline': 'Выключено',
+      'statusScanning': 'Сканирование...',
+      'statusServer': 'Сервер',
+      'subLanguage': 'Выберите язык приложения.',
+      'subAppearance': 'Цвета, размер текста, запуск и внешний вид.',
+      'subReceive': 'Куда сохраняются файлы и кто может их отправлять.',
+      'subLink': 'Параметры раздачи файлов по ссылке.',
+      'subNetwork': 'Видимость, сканирование и порт.',
+      'subHistory': 'Хранить или очистить список передач.',
+      'subAbout': 'Версия, список изменений и сброс.',
+      'statusBar': 'Строка состояния',
+      'statusBarDesc': 'Показывать полосу внизу больших окон',
+      'mouseGlow': 'Свет следует за мышью',
+      'mouseGlowDesc': 'Мягкое свечение под курсором мыши',
+      'glowLevel': 'Свечение фона',
+      'use24h': '24-часовой формат',
+      'use24hDesc': 'Выкл: время с AM и PM',
+      'sortDevices': 'Сортировка устройств',
+      'sortName': 'Имя',
+      'sortIp': 'Адрес',
+      'sortFound': 'Порядок обнаружения',
+      'soundDone': 'Звук по окончании передачи',
+      'soundDoneDesc': 'Короткий звук после отправки или получения',
+      'confirmSend': 'Подтверждать отправку',
+      'confirmSendDesc': 'Спрашивать перед отправкой файлов на устройство',
+      'sendConfirm': 'Отправить на {n}?',
+      'startOnline': 'Запускать включённым',
+      'startOnlineDesc': 'Выкл: LocalBridge скрыт, пока вы не нажмёте кнопку питания',
+      'confirmClear': 'Подтверждать очистку истории',
+      'confirmClearDesc': 'Спрашивать перед удалением списка передач',
+      'hoverFx': 'Эффекты наведения',
+      'hoverFxDesc': 'Карточки увеличиваются и светятся под мышью',
+      'railStats': 'Статистика в боковом меню',
+      'railStatsDesc': 'Показывать число найденных, отправленных и полученных в боковом меню',
       'port': 'Порт',
 
       'saveHistory': 'Сохранять историю',
@@ -855,6 +981,18 @@ class Settings extends ChangeNotifier {
   int scanSpeed = 0; // 0 balanced, 1 fast, 2 turbo
   bool scanVirtual = false; // also scan VPN / VM / Docker networks
   int bootAnim = 1; // 0 off, 1 quick, 2 full
+  // extra settings (2.1.0)
+  bool showStatusBar = true;
+  bool mouseGlow = true;
+  int glowLevel = 100; // background glow strength in percent
+  bool use24h = true;
+  int sortDevices = 0; // 0 name, 1 address, 2 order found
+  bool soundOnDone = false;
+  bool confirmSend = false;
+  bool startOnline = true;
+  bool confirmClear = true;
+  bool hoverFx = true;
+  bool showRailStats = true;
 
   static String _defaultName() {
     final os = Platform.isAndroid
@@ -919,6 +1057,17 @@ class Settings extends ChangeNotifier {
       scanSpeed = ((j['scanSpeed'] as int?) ?? 0).clamp(0, 2);
       scanVirtual = (j['scanVirtual'] as bool?) ?? false;
       bootAnim = ((j['bootAnim'] as int?) ?? 1).clamp(0, 2);
+      showStatusBar = (j['showStatusBar'] as bool?) ?? true;
+      mouseGlow = (j['mouseGlow'] as bool?) ?? true;
+      glowLevel = ((j['glowLevel'] as int?) ?? 100).clamp(0, 200);
+      use24h = (j['use24h'] as bool?) ?? true;
+      sortDevices = ((j['sortDevices'] as int?) ?? 0).clamp(0, 2);
+      soundOnDone = (j['soundOnDone'] as bool?) ?? false;
+      confirmSend = (j['confirmSend'] as bool?) ?? false;
+      startOnline = (j['startOnline'] as bool?) ?? true;
+      confirmClear = (j['confirmClear'] as bool?) ?? true;
+      hoverFx = (j['hoverFx'] as bool?) ?? true;
+      showRailStats = (j['showRailStats'] as bool?) ?? true;
     } catch (_) {}
   }
 
@@ -965,6 +1114,17 @@ class Settings extends ChangeNotifier {
         'scanSpeed': scanSpeed,
         'scanVirtual': scanVirtual,
         'bootAnim': bootAnim,
+        'showStatusBar': showStatusBar,
+        'mouseGlow': mouseGlow,
+        'glowLevel': glowLevel,
+        'use24h': use24h,
+        'sortDevices': sortDevices,
+        'soundOnDone': soundOnDone,
+        'confirmSend': confirmSend,
+        'startOnline': startOnline,
+        'confirmClear': confirmClear,
+        'hoverFx': hoverFx,
+        'showRailStats': showRailStats,
       }));
     } catch (_) {}
   }
@@ -1016,6 +1176,17 @@ class Settings extends ChangeNotifier {
       scanSpeed = 0;
       scanVirtual = false;
       bootAnim = 1;
+      showStatusBar = true;
+      mouseGlow = true;
+      glowLevel = 100;
+      use24h = true;
+      sortDevices = 0;
+      soundOnDone = false;
+      confirmSend = false;
+      startOnline = true;
+      confirmClear = true;
+      hoverFx = true;
+      showRailStats = true;
     });
   }
 
@@ -1119,9 +1290,11 @@ String fmtSize(int b) {
   return '${(b / 1024 / 1024 / 1024).toStringAsFixed(2)} GB';
 }
 
-String fmtTime(DateTime t) {
+String fmtTime(DateTime t, [bool h24 = true]) {
   String two(int n) => n.toString().padLeft(2, '0');
-  return '${two(t.day)}.${two(t.month)} ${two(t.hour)}:${two(t.minute)}';
+  if (h24) return '${two(t.day)}.${two(t.month)} ${two(t.hour)}:${two(t.minute)}';
+  final h = t.hour % 12 == 0 ? 12 : t.hour % 12;
+  return '${two(t.day)}.${two(t.month)} $h:${two(t.minute)} ${t.hour < 12 ? 'AM' : 'PM'}';
 }
 
 String _esc(String s) => s
@@ -1196,12 +1369,34 @@ class DropService extends ChangeNotifier {
 
   void _buzz() {
     if (cfg.haptics) HapticFeedback.mediumImpact();
+    if (cfg.soundOnDone) SystemSound.play(SystemSoundType.alert);
+  }
+
+  /// Devices in the order chosen in Settings (name, address or found order).
+  List<Device> sortedDevices() {
+    final list = devices.values.toList();
+    if (cfg.sortDevices == 0) {
+      list.sort((a, b) => a.alias.toLowerCase().compareTo(b.alias.toLowerCase()));
+    } else if (cfg.sortDevices == 1) {
+      int key(String ip) {
+        final p = ip.split('.').map((e) => int.tryParse(e) ?? 0).toList();
+        return p.fold<int>(0, (a, b) => a * 256 + b);
+      }
+      list.sort((a, b) => key(a.ip).compareTo(key(b.ip)));
+    }
+    return list;
   }
 
   Future<void> start() async {
     // Independent startup work runs side by side instead of one after another,
     // so the app is ready (and scanning) sooner.
     unawaited(_loadHistory().then((_) => _notify()));
+    if (!cfg.startOnline) {
+      // "Start turned on" is off: stay hidden until the power button is pressed.
+      online = false;
+      _notify();
+      return;
+    }
     final bound = _bind();
     final ips = _localIps();
     final known = _loadKnown();
@@ -1998,10 +2193,10 @@ class DropService extends ChangeNotifier {
 
 // -------------------------------------------------------------------- UI
 
-const Color kBg = Color(0xFF09090B);
-const Color kCard = Color(0xFF18181B);
-const Color kCard2 = Color(0xFF121214);
-const Color kLine = Color(0xFF27272A);
+const Color kBg = Color(0xFF0A0A0A);
+const Color kCard = Color(0xFF111111);
+const Color kCard2 = Color(0xFF0D0D0D);
+const Color kLine = Color(0xFF212121);
 
 BoxDecoration _cardDeco({double r = 20, Color color = kCard, Color border = kLine}) =>
     BoxDecoration(
@@ -2021,6 +2216,8 @@ class _Hover extends StatefulWidget {
   final bool glow;
   final bool spotlight;
   final bool clickable;
+  /// Set from the "Hover effects" setting.
+  static bool fx = true;
   const _Hover({
     required this.child,
     this.scale = 1.025,
@@ -2048,7 +2245,7 @@ class _HoverState extends State<_Hover> {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
-    final on = _hover && widget.enabled;
+    final on = _hover && widget.enabled && _Hover.fx;
     return MouseRegion(
       cursor: (widget.enabled && widget.clickable) ? SystemMouseCursors.click : MouseCursor.defer,
       onEnter: (e) {
@@ -2116,12 +2313,20 @@ class _SpotPainter extends CustomPainter {
   bool shouldRepaint(covariant _SpotPainter old) => old.color != color || old.pos != pos;
 }
 
+bool _fxFrom(Settings st) {
+  _Hover.fx = st.hoverFx;
+  return st.mouseGlow;
+}
+
 /// Page background: dark base + faint top glow + a glow that sticks to the
 /// mouse instantly and gently breathes where the cursor rests.
 class _CursorGlow extends StatefulWidget {
   final Widget child;
   final Color color;
-  const _CursorGlow({required this.child, required this.color});
+  final bool follow; // light follows the mouse
+  final double level; // 0..2 strength of the glow
+  const _CursorGlow(
+      {required this.child, required this.color, this.follow = true, this.level = 1.0});
 
   @override
   State<_CursorGlow> createState() => _CursorGlowState();
@@ -2160,14 +2365,14 @@ class _CursorGlowState extends State<_CursorGlow> with SingleTickerProviderState
           Positioned.fill(
             child: RepaintBoundary(
               child: TweenAnimationBuilder<double>(
-                tween: Tween<double>(end: _on ? 1.0 : 0.0),
+                tween: Tween<double>(end: (_on && widget.follow) ? 1.0 : 0.0),
                 duration: const Duration(milliseconds: 450),
                 curve: Curves.easeOut,
                 builder: (context, k, _) => AnimatedBuilder(
                   animation: _pulse,
                   builder: (context, _) => CustomPaint(
                     // follows the cursor instantly, no gliding
-                    painter: _BgGlowPainter(_target, widget.color, k, _pulse.value),
+                    painter: _BgGlowPainter(_target, widget.color, k, _pulse.value, widget.level),
                   ),
                 ),
               ),
@@ -2185,19 +2390,22 @@ class _BgGlowPainter extends CustomPainter {
   final Color color;
   final double k; // 0..1 fade in/out
   final double pulse; // 0..1 breathing
-  const _BgGlowPainter(this.pos, this.color, this.k, this.pulse);
+  final double level; // 0..2 strength
+  const _BgGlowPainter(this.pos, this.color, this.k, this.pulse, this.level);
 
   @override
   void paint(Canvas canvas, Size size) {
+    // neutral (almost white) light, like a dark editor: no strong tint
+    final color = Color.lerp(this.color, Colors.white, 0.78)!;
     final rect = Offset.zero & size;
     canvas.drawRect(rect, Paint()..color = kBg);
     canvas.drawRect(
       rect,
       Paint()
         ..shader = RadialGradient(
-          center: const Alignment(0, -1.2),
-          radius: 1.0,
-          colors: [color.withAlpha(28), color.withAlpha(0)],
+          center: const Alignment(0.1, -0.2),
+          radius: 0.95,
+          colors: [color.withAlpha((15 * level).round().clamp(0, 255)), color.withAlpha(0)],
         ).createShader(rect),
     );
     if (k <= 0.01) return;
@@ -2207,7 +2415,7 @@ class _BgGlowPainter extends CustomPainter {
       rect,
       Paint()
         ..shader = RadialGradient(
-          colors: [color.withAlpha((40 * k).round()), color.withAlpha(0)],
+          colors: [color.withAlpha((40 * k * level).round().clamp(0, 255)), color.withAlpha(0)],
         ).createShader(Rect.fromCircle(center: pos, radius: r1)),
     );
     // brighter core
@@ -2216,14 +2424,18 @@ class _BgGlowPainter extends CustomPainter {
       rect,
       Paint()
         ..shader = RadialGradient(
-          colors: [color.withAlpha((46 * k).round()), color.withAlpha(0)],
+          colors: [color.withAlpha((46 * k * level).round().clamp(0, 255)), color.withAlpha(0)],
         ).createShader(Rect.fromCircle(center: pos, radius: r2)),
     );
   }
 
   @override
   bool shouldRepaint(covariant _BgGlowPainter old) =>
-      old.pos != pos || old.color != color || old.k != k || old.pulse != pulse;
+      old.pos != pos ||
+      old.color != color ||
+      old.k != k ||
+      old.pulse != pulse ||
+      old.level != level;
 }
 
 // ------------------------------------------------------- bridge logo + splash
@@ -2556,7 +2768,12 @@ class LocalBridgeApp extends StatelessWidget {
           builder: (context, child) => MediaQuery(
             data: MediaQuery.of(context)
                 .copyWith(textScaler: TextScaler.linear(settings.textScale)),
-            child: _CursorGlow(color: seed, child: child!),
+            child: _CursorGlow(
+              color: seed,
+              follow: _fxFrom(settings),
+              level: settings.glowLevel / 100.0,
+              child: child!,
+            ),
           ),
           home: _Boot(settings: settings),
         );
@@ -2709,6 +2926,36 @@ class _ShellState extends State<Shell> {
   Future<void> _pickAndSend(Device d) async {
     final files = await FilePicker.pickFiles();
     if (files.isEmpty) return;
+    final st = widget.settings;
+    if (st.confirmSend) {
+      var total = 0;
+      for (final f in files) {
+        try {
+          total += f.lengthSync() ?? await f.length() ?? 0;
+        } catch (_) {}
+      }
+      if (!mounted) return;
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: const BorderSide(color: Color(0xFF27272A))),
+          title: Text(st.tr('sendConfirm').replaceAll('{n}', d.alias)),
+          content: Text('${files.length} file${files.length == 1 ? '' : 's'} \u2022 ${fmtSize(total)}'),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(st.tr('cancel'))),
+            _GradButton(
+              label: st.tr('send'),
+              icon: Icons.send_rounded,
+              compact: true,
+              onTap: () => Navigator.pop(ctx, true),
+            ),
+          ],
+        ),
+      );
+      if (ok != true) return;
+    }
     svc.sendFiles(d, files);
   }
 
@@ -2745,7 +2992,9 @@ class _ShellState extends State<Shell> {
         if (box.maxWidth >= kWideBreakpoint) {
           return Scaffold(
             body: SafeArea(
-              child: Row(
+              child: Column(children: [
+                Expanded(
+                  child: Row(
                 children: [
                   _SideRail(
                     index: _tab,
@@ -2768,6 +3017,9 @@ class _ShellState extends State<Shell> {
                   ),
                 ],
               ),
+                ),
+                if (s.showStatusBar) _StatusBar(svc: svc),
+              ]),
             ),
           );
         }
@@ -2804,6 +3056,56 @@ class _ShellState extends State<Shell> {
 }
 
 // ------------------------------------------------------------ shared widgets
+
+/// Thin bar at the bottom of wide windows: connection state, server, address.
+class _StatusBar extends StatelessWidget {
+  final DropService svc;
+  const _StatusBar({required this.svc});
+
+  @override
+  Widget build(BuildContext context) {
+    final s = svc.cfg;
+    const okColor = Color(0xFF4ADE80);
+    final on = svc.online;
+    final n = svc.devices.length;
+    final label = !on
+        ? s.tr('statusOffline')
+        : (svc.scanning && n == 0)
+            ? s.tr('statusScanning')
+            : '$n ${s.tr('statusConnected')}';
+    final color = on ? okColor : Colors.white38;
+    final ip = (s.showIps && svc.myIps.isNotEmpty) ? svc.myIps.first : null;
+    Widget item(String t, {Color? c}) => Text(
+          t,
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: c ?? Colors.white54),
+        );
+    return Container(
+      height: 28,
+      padding: const EdgeInsets.symmetric(horizontal: 14),
+      decoration: const BoxDecoration(
+        color: kCard2,
+        border: Border(top: BorderSide(color: kLine)),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 7,
+            height: 7,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          ),
+          const SizedBox(width: 8),
+          item(label, c: color),
+          const Spacer(),
+          if (on && svc.serverUp) item('${s.tr('statusServer')} :${s.port}'),
+          if (ip != null) ...[const SizedBox(width: 16), item(ip)],
+          const SizedBox(width: 16),
+          item('$kAppName v$kVersion'),
+        ],
+      ),
+    );
+  }
+}
+
 
 /// Left side menu used on wide windows (replaces the bottom bar).
 class _SideRail extends StatelessWidget {
@@ -2852,32 +3154,6 @@ class _SideRail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 0, 8, 20),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(9),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [cs.primary, Color.lerp(cs.primary, cs.tertiary, 0.7)!],
-                    ),
-                    borderRadius: BorderRadius.circular(13),
-                  ),
-                  child: _BridgeMark(size: 24, color: cs.onPrimary),
-                ),
-                const SizedBox(width: 12),
-                const Expanded(
-                  child: Text(
-                    kAppName,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w800, letterSpacing: 0.5, fontSize: 19),
-                  ),
-                ),
-              ],
-            ),
-          ),
           // Device card (same info as the top of the Settings page)
           _Hover(
             radius: 18,
@@ -2997,6 +3273,7 @@ class _SideRail extends StatelessWidget {
                         ),
                       ),
                     ),
+                  if (svc.cfg.showRailStats) ...[
                   const SizedBox(height: 14),
                   // live stats
                   Container(
@@ -3036,30 +3313,10 @@ class _SideRail extends StatelessWidget {
                       ],
                     ),
                   ),
+                  ],
                 ],
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          SizedBox(
-            width: double.infinity,
-            child: online
-                ? OutlinedButton.icon(
-                    onPressed: () => svc.setOnline(false),
-                    icon: const Icon(Icons.power_settings_new_rounded, size: 18),
-                    label: Text(tr('turnOff')),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.redAccent,
-                      side: BorderSide(color: Colors.redAccent.withAlpha(110)),
-                      padding: const EdgeInsets.symmetric(vertical: 13),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                    ),
-                  )
-                : _GradButton(
-                    label: tr('turnOn'),
-                    icon: Icons.power_settings_new_rounded,
-                    onTap: () => svc.setOnline(true),
-                  ),
           ),
           const SizedBox(height: 12),
           Container(
@@ -3096,12 +3353,75 @@ class _SideRail extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: _Pill(icon: Icons.verified_rounded, text: 'v$kVersion', color: cs.primary),
+          _RailLink(
+            icon: Icons.new_releases_outlined,
+            label: tr('whatsNew'),
+            onTap: () => showChangelog(context, svc.cfg),
+          ),
+          const SizedBox(height: 4),
+          _RailLink(
+            icon: Icons.code_rounded,
+            label: 'Made by unqale',
+            onTap: () => openGithub(context),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _RailLink extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  const _RailLink({required this.icon, required this.label, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return _Hover(
+      radius: 14,
+      scale: 1.02,
+      glow: false,
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
+            child: Row(
+              children: [
+                Icon(icon, size: 19, color: Colors.white60),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white70),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> openGithub(BuildContext context) async {
+  const url = 'https://github.com/unqale';
+  var ok = false;
+  try {
+    ok = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+  } catch (_) {}
+  if (!ok && context.mounted) {
+    Clipboard.setData(const ClipboardData(text: url));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Could not open the browser, link copied')),
     );
   }
 }
@@ -3419,7 +3739,7 @@ class DevicesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final tt = Theme.of(context).textTheme;
-    final devs = svc.devices.values.toList();
+    final devs = svc.sortedDevices();
     final tr = svc.cfg.tr;
     final online = svc.online;
     return LayoutBuilder(builder: (context, box) {
@@ -3461,10 +3781,50 @@ class DevicesPage extends StatelessWidget {
         slivers: [
           SliverAppBar(
             floating: true,
+            toolbarHeight: wide ? 76 : kToolbarHeight,
             titleSpacing: wide ? 24 : 16,
             title: wide
-                ? Text(tr('devices'),
-                    style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 21))
+                ? Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: cs.primary.withAlpha(30),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Icon(Icons.radar_rounded, size: 22, color: cs.primary),
+                      ),
+                      const SizedBox(width: 14),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(tr('devices'),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w800, fontSize: 24, height: 1.1)),
+                          const SizedBox(height: 3),
+                          Text(
+                            !online
+                                ? tr('statusOffline')
+                                : '${devs.length} ${tr('statusConnected')}',
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600,
+                              color: !online ? Colors.white38 : const Color(0xFF4ADE80),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (online && svc.scanning) ...[
+                        const SizedBox(width: 14),
+                        const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        ),
+                      ],
+                    ],
+                  )
                 : Row(
                     children: [
                       Container(
@@ -3484,61 +3844,27 @@ class DevicesPage extends StatelessWidget {
                     ],
                   ),
             actions: [
-              // Power switch: turns scanning + the server on/off.
+              // Turn on / turn off: scanning + the server.
               Padding(
                 padding: EdgeInsets.only(right: wide ? 24 : 16),
-                child: _Hover(
-                  radius: 20,
-                  glow: false,
-                  child: Tooltip(
-                    message: online ? tr('turnOff') : tr('turnOn'),
-                    child: Material(
-                      color: kCard,
-                      shape: StadiumBorder(
-                        side: BorderSide(
-                          color: online ? kLine : Colors.redAccent.withAlpha(110),
+                child: online
+                    ? OutlinedButton.icon(
+                        onPressed: () => svc.setOnline(false),
+                        icon: const Icon(Icons.power_settings_new_rounded, size: 18),
+                        label: Text(tr('turnOff')),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.redAccent,
+                          side: BorderSide(color: Colors.redAccent.withAlpha(110)),
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                         ),
+                      )
+                    : _GradButton(
+                        label: tr('turnOn'),
+                        icon: Icons.power_settings_new_rounded,
+                        compact: true,
+                        onTap: () => svc.setOnline(true),
                       ),
-                      child: InkWell(
-                        customBorder: const StadiumBorder(),
-                        onTap: () => svc.setOnline(!online),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 8,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  color: !online
-                                      ? Colors.white38
-                                      : (svc.serverUp ? Colors.greenAccent : Colors.redAccent),
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                              const SizedBox(width: 7),
-                              Text(
-                                online ? tr('active') : tr('disabled'),
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: online ? Colors.white : Colors.white54,
-                                ),
-                              ),
-                              const SizedBox(width: 6),
-                              Icon(
-                                Icons.power_settings_new_rounded,
-                                size: 15,
-                                color: online ? cs.primary : Colors.redAccent,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
@@ -3675,7 +4001,7 @@ class _RadarHeroState extends State<_RadarHero> with SingleTickerProviderStateMi
     final cs = Theme.of(context).colorScheme;
     final svc = widget.svc;
     final tr = svc.cfg.tr;
-    final devs = svc.devices.values.toList();
+    final devs = svc.sortedDevices();
     final animate = svc.scanning && svc.cfg.showRadar;
     final ipText = svc.myIps.isEmpty
         ? 'No network found'
@@ -4694,7 +5020,7 @@ class _HistoryPageState extends State<HistoryPage> {
                               style: const TextStyle(
                                   color: Colors.white, fontWeight: FontWeight.w700)),
                           subtitle: Text(
-                            '${h.sent ? tr('to') : tr('from')}: ${h.peer} • ${fmtTime(h.time)}',
+                            '${h.sent ? tr('to') : tr('from')}: ${h.peer} • ${fmtTime(h.time, svc.cfg.use24h)}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.white54, fontSize: 12),
@@ -5076,6 +5402,15 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   Settings get s => widget.settings;
   String _defaultDir = '';
+  int _cat = 0; // selected category on wide windows
+  String _q = ''; // settings search text
+  final TextEditingController _search = TextEditingController();
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -5123,6 +5458,181 @@ class _SettingsPageState extends State<SettingsPage> {
         const SnackBar(content: Text('Could not open the browser, link copied')),
       );
     }
+  }
+
+  Future<void> _confirmReset() async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+            side: const BorderSide(color: Color(0xFF27272A))),
+        title: Text(s.tr('resetConfirm')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(s.tr('cancel'))),
+          _GradButton(
+            label: s.tr('reset'),
+            compact: true,
+            onTap: () => Navigator.pop(ctx, true),
+          ),
+        ],
+      ),
+    );
+    if (ok == true) s.reset();
+  }
+
+  /// All visible text of a settings row (used by the settings search).
+  String _textsOf(Widget? w) {
+    if (w == null) return '';
+    if (w is Text) return w.data ?? '';
+    if (w is SwitchListTile) return '${_textsOf(w.title)} ${_textsOf(w.subtitle)}';
+    if (w is ListTile) return '${_textsOf(w.title)} ${_textsOf(w.subtitle)}';
+    if (w is Padding) return _textsOf(w.child);
+    if (w is Column) return w.children.map(_textsOf).join(' ');
+    if (w is Row) return w.children.map(_textsOf).join(' ');
+    return '';
+  }
+
+  Widget _catTile(int i, _Section sec, bool selected) {
+    final cs = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Material(
+        color: selected ? Colors.white.withAlpha(18) : Colors.transparent,
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () => setState(() {
+            _cat = i;
+            _q = '';
+            _search.clear();
+          }),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            child: Row(
+              children: [
+                Icon(sec.icon ?? Icons.settings_outlined,
+                    size: 19, color: selected ? Colors.white : Colors.white54),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    sec.title,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontWeight: selected ? FontWeight.w700 : FontWeight.w600,
+                      color: selected ? Colors.white : Colors.white70,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Wide windows: category list with search on the left, one category on the right.
+  Widget _twoPane(List<_Section> secs) {
+    final cs = Theme.of(context).colorScheme;
+    final q = _q.trim().toLowerCase();
+    final subs = [
+      s.tr('subLanguage'),
+      s.tr('subAppearance'),
+      s.tr('subReceive'),
+      s.tr('subLink'),
+      s.tr('subNetwork'),
+      s.tr('subHistory'),
+      s.tr('subAbout'),
+    ];
+    if (_cat >= secs.length) _cat = 0;
+
+    final right = <Widget>[];
+    if (q.isEmpty) {
+      final sec = secs[_cat];
+      right.addAll([
+        Text(sec.title,
+            style: const TextStyle(
+                fontSize: 30, fontWeight: FontWeight.w800, color: Colors.white)),
+        const SizedBox(height: 4),
+        Text(_cat < subs.length ? subs[_cat] : '',
+            style: const TextStyle(fontSize: 14, color: Colors.white54)),
+        const SizedBox(height: 20),
+        _Section(title: sec.title, icon: sec.icon, header: false, children: sec.children),
+      ]);
+    } else {
+      for (final sec in secs) {
+        final hit = sec.title.toLowerCase().contains(q);
+        final rows = hit
+            ? sec.children
+            : [
+                for (final c in sec.children)
+                  if (_textsOf(c).toLowerCase().contains(q)) c
+              ];
+        if (rows.isEmpty) continue;
+        right.add(_Section(title: sec.title, icon: sec.icon, children: rows));
+      }
+      if (right.isEmpty) {
+        right.add(Padding(
+          padding: const EdgeInsets.only(top: 48),
+          child: Center(
+            child: Text(s.tr('noResults'),
+                style: const TextStyle(fontSize: 15, color: Colors.white54)),
+          ),
+        ));
+      }
+    }
+
+    OutlineInputBorder border(Color c) => OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14),
+          borderSide: BorderSide(color: c),
+        );
+
+    final left = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        TextField(
+          controller: _search,
+          onChanged: (v) => setState(() => _q = v),
+          decoration: InputDecoration(
+            hintText: s.tr('searchSettings'),
+            prefixIcon: const Icon(Icons.search_rounded, size: 20),
+            filled: true,
+            fillColor: kCard,
+            isDense: true,
+            contentPadding: const EdgeInsets.symmetric(vertical: 14),
+            border: border(kLine),
+            enabledBorder: border(kLine),
+            focusedBorder: border(Colors.white24),
+          ),
+        ),
+        const SizedBox(height: 14),
+        for (var i = 0; i < secs.length; i++) _catTile(i, secs[i], q.isEmpty && i == _cat),
+        const SizedBox(height: 14),
+        OutlinedButton.icon(
+          onPressed: _confirmReset,
+          icon: const Icon(Icons.restart_alt_rounded, size: 18),
+          label: Text(s.tr('resetPrefs')),
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size.fromHeight(48),
+            foregroundColor: Colors.white70,
+            side: const BorderSide(color: kLine),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          ),
+        ),
+      ],
+    );
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(width: 270, child: left),
+        const SizedBox(width: 28),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: right),
+        ),
+      ],
+    );
   }
 
   Widget _langOption(AppLang l, String label) {
@@ -5174,9 +5684,9 @@ class _SettingsPageState extends State<SettingsPage> {
           SliverPadding(
             padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
             sliver: SliverToBoxAdapter(
-              child: _AdaptiveColumns(fullWidthFirst: true, children: [
+              child: LayoutBuilder(builder: (context, box) {
                 // profile header
-                Container(
+                final profile = Container(
                   margin: const EdgeInsets.only(bottom: 18),
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -5243,7 +5753,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                     ],
                   ),
-                ),
+                );
+                final secs = <_Section>[
                 _Section(title: s.tr('language'), icon: Icons.translate_rounded, children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 14, 12, 14),
@@ -5342,6 +5853,87 @@ class _SettingsPageState extends State<SettingsPage> {
                       ][s.bootAnim.clamp(0, 2)]),
                     ),
                   ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.call_to_action_outlined),
+                    title: Text(s.tr('statusBar')),
+                    subtitle: Text(s.tr('statusBarDesc')),
+                    value: s.showStatusBar,
+                    onChanged: (v) => s.update(() => s.showStatusBar = v),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.ads_click_rounded),
+                    title: Text(s.tr('hoverFx')),
+                    subtitle: Text(s.tr('hoverFxDesc')),
+                    value: s.hoverFx,
+                    onChanged: (v) => s.update(() => s.hoverFx = v),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.bar_chart_rounded),
+                    title: Text(s.tr('railStats')),
+                    subtitle: Text(s.tr('railStatsDesc')),
+                    value: s.showRailStats,
+                    onChanged: (v) => s.update(() => s.showRailStats = v),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.mouse_outlined),
+                    title: Text(s.tr('mouseGlow')),
+                    subtitle: Text(s.tr('mouseGlowDesc')),
+                    value: s.mouseGlow,
+                    onChanged: (v) => s.update(() => s.mouseGlow = v),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(18, 12, 18, 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(children: [
+                          const _Ic(Icons.blur_on_rounded),
+                          const SizedBox(width: 16),
+                          Text('${s.tr('glowLevel')}: ${s.glowLevel}%'),
+                        ]),
+                        Slider(
+                          min: 0,
+                          max: 200,
+                          divisions: 20,
+                          value: s.glowLevel.toDouble().clamp(0.0, 200.0).toDouble(),
+                          label: '${s.glowLevel}%',
+                          onChanged: (v) => s.update(() => s.glowLevel = (v / 10).round() * 10),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.schedule_rounded),
+                    title: Text(s.tr('use24h')),
+                    subtitle: Text(s.tr('use24hDesc')),
+                    value: s.use24h,
+                    onChanged: (v) => s.update(() => s.use24h = v),
+                  ),
+                  ListTile(
+                    leading: const _Ic(Icons.sort_rounded),
+                    title: Text(s.tr('sortDevices')),
+                    trailing: PopupMenuButton<int>(
+                      initialValue: s.sortDevices,
+                      onSelected: (v) => s.update(() => s.sortDevices = v),
+                      itemBuilder: (_) => [
+                        PopupMenuItem(value: 0, child: Text(s.tr('sortName'))),
+                        PopupMenuItem(value: 1, child: Text(s.tr('sortIp'))),
+                        PopupMenuItem(value: 2, child: Text(s.tr('sortFound'))),
+                      ],
+                      child: _ValuePill([
+                        s.tr('sortName'),
+                        s.tr('sortIp'),
+                        s.tr('sortFound'),
+                      ][s.sortDevices.clamp(0, 2)]),
+                    ),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.volume_up_outlined),
+                    title: Text(s.tr('soundDone')),
+                    subtitle: Text(s.tr('soundDoneDesc')),
+                    value: s.soundOnDone,
+                    onChanged: (v) => s.update(() => s.soundOnDone = v),
+                  ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(18, 12, 18, 8),
                     child: Column(
@@ -5421,6 +6013,13 @@ class _SettingsPageState extends State<SettingsPage> {
                     subtitle: Text(s.tr('trustedAutoSub')),
                     value: s.autoAcceptTrusted,
                     onChanged: (v) => s.update(() => s.autoAcceptTrusted = v),
+                  ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.send_outlined),
+                    title: Text(s.tr('confirmSend')),
+                    subtitle: Text(s.tr('confirmSendDesc')),
+                    value: s.confirmSend,
+                    onChanged: (v) => s.update(() => s.confirmSend = v),
                   ),
                   ListTile(
                     leading: const _Ic(Icons.verified_user_outlined),
@@ -5508,6 +6107,13 @@ class _SettingsPageState extends State<SettingsPage> {
                         ],
                       ),
                     ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.power_settings_new_rounded),
+                    title: Text(s.tr('startOnline')),
+                    subtitle: Text(s.tr('startOnlineDesc')),
+                    value: s.startOnline,
+                    onChanged: (v) => s.update(() => s.startOnline = v),
+                  ),
                   ListTile(
                     leading: const _Ic(Icons.speed_rounded),
                     title: Text(s.tr('scanSpeed')),
@@ -5573,11 +6179,41 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: _ValuePill('${s.historyLimit}'),
                     ),
                   ),
+                  SwitchListTile(
+                    secondary: const _Ic(Icons.help_outline_rounded),
+                    title: Text(s.tr('confirmClear')),
+                    subtitle: Text(s.tr('confirmClearDesc')),
+                    value: s.confirmClear,
+                    onChanged: (v) => s.update(() => s.confirmClear = v),
+                  ),
                   ListTile(
                     leading: const _Ic(Icons.delete_outline_rounded),
                     title: Text(s.tr('clearHistory')),
-                    onTap: () {
+                    onTap: () async {
+                      if (s.confirmClear) {
+                        final ok = await showDialog<bool>(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24),
+                                side: const BorderSide(color: Color(0xFF27272A))),
+                            title: Text('${s.tr('clearHistory')}?'),
+                            actions: [
+                              TextButton(
+                                  onPressed: () => Navigator.pop(ctx, false),
+                                  child: Text(s.tr('cancel'))),
+                              _GradButton(
+                                label: s.tr('clearHistory'),
+                                compact: true,
+                                onTap: () => Navigator.pop(ctx, true),
+                              ),
+                            ],
+                          ),
+                        );
+                        if (ok != true) return;
+                      }
                       widget.svc.clearHistory();
+                      if (!mounted) return;
                       ScaffoldMessenger.of(context)
                           .showSnackBar(const SnackBar(content: Text('History cleared')));
                     },
@@ -5639,7 +6275,15 @@ class _SettingsPageState extends State<SettingsPage> {
                     },
                   ),
                 ]),
-              ]),
+                ];
+                if (box.maxWidth >= 820) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [profile, _twoPane(secs)],
+                  );
+                }
+                return _AdaptiveColumns(fullWidthFirst: true, children: [profile, ...secs]);
+              }),
             ),
           ),
         ],
@@ -5652,14 +6296,16 @@ class _Section extends StatelessWidget {
   final String title;
   final IconData? icon;
   final List<Widget> children;
-  const _Section({required this.title, required this.children, this.icon});
+  final bool header;
+  const _Section(
+      {required this.title, required this.children, this.icon, this.header = true});
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final rows = <Widget>[];
     for (var i = 0; i < children.length; i++) {
-      if (i > 0) rows.add(const Divider(height: 1, thickness: 1, color: Color(0xFF222226)));
+      if (i > 0) rows.add(const Divider(height: 1, thickness: 1, color: kLine));
       rows.add(children[i]);
     }
     return Padding(
@@ -5667,6 +6313,7 @@ class _Section extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          if (header)
           Padding(
             padding: const EdgeInsets.fromLTRB(6, 4, 6, 10),
             child: Row(
@@ -5704,10 +6351,11 @@ class _Section extends StatelessWidget {
             glow: false,
             clickable: false,
             child: Material(
-              color: kCard,
+              // no header = right pane of the two-pane settings: flat rows
+              color: header ? kCard : Colors.transparent,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(22),
-                side: const BorderSide(color: kLine),
+                borderRadius: BorderRadius.circular(header ? 22 : 0),
+                side: header ? const BorderSide(color: kLine) : BorderSide.none,
               ),
               clipBehavior: Clip.antiAlias,
               child: Column(children: rows),
@@ -5720,78 +6368,164 @@ class _Section extends StatelessWidget {
 }
 
 void showChangelog(BuildContext context, Settings s) {
-  showModalBottomSheet<void>(
+  showDialog<void>(
     context: context,
-    isScrollControlled: true,
-    showDragHandle: true,
-    backgroundColor: const Color(0xFF18181B),
-    constraints: const BoxConstraints(maxWidth: kMaxContentWidth),
     builder: (ctx) {
       final cs = Theme.of(ctx).colorScheme;
-      final tt = Theme.of(ctx).textTheme;
-      return DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.7,
-        maxChildSize: 0.95,
-        builder: (ctx, controller) => ListView(
-          controller: controller,
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
-          children: [
-            Text(s.tr('whatsNew'),
-                style: tt.headlineSmall
-                    ?.copyWith(fontWeight: FontWeight.w700, color: Colors.white)),
-            const SizedBox(height: 16),
-            for (var i = 0; i < kChangelog.length; i++) ...[
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: i == 0 ? cs.primary : const Color(0xFF27272A),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      '${s.tr('update')} ${kChangelog[i].version}',
-                      style: TextStyle(
-                        color: i == 0 ? cs.onPrimary : Colors.white70,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 12,
-                      ),
-                    ),
+      return Dialog(
+        backgroundColor: kCard,
+        insetPadding: const EdgeInsets.all(16),
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(26),
+          side: const BorderSide(color: kLine),
+        ),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 760, maxHeight: 720),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(24, 20, 12, 18),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [cs.primary.withAlpha(44), Colors.transparent],
                   ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(kChangelog[i].title(s.language),
-                        style: tt.titleMedium
-                            ?.copyWith(fontWeight: FontWeight.w600, color: Colors.white)),
-                  ),
-                  if (i == 0)
-                    Text(s.tr('current'), style: tt.labelMedium?.copyWith(color: cs.primary)),
-                ],
-              ),
-              const SizedBox(height: 8),
-              for (final line in kChangelog[i].lines(s.language))
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 3),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 3),
-                        child: Icon(Icons.check_circle_outline_rounded,
-                            size: 16, color: cs.primary),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(child: Text(line, style: const TextStyle(color: Colors.white70))),
-                    ],
-                  ),
+                  border: const Border(bottom: BorderSide(color: kLine)),
                 ),
-              if (i != kChangelog.length - 1)
-                const Divider(height: 28, color: Color(0xFF27272A)),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [cs.primary, Color.lerp(cs.primary, cs.tertiary, 0.7)!],
+                        ),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: _BridgeMark(size: 26, color: cs.onPrimary),
+                    ),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(s.tr('whatsNew'),
+                              style: const TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.w800, color: Colors.white)),
+                          const SizedBox(height: 2),
+                          Text('$kAppName v$kVersion',
+                              style: const TextStyle(fontSize: 12.5, color: Colors.white54)),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () => Navigator.pop(ctx),
+                      icon: const Icon(Icons.close_rounded),
+                    ),
+                  ],
+                ),
+              ),
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.fromLTRB(20, 18, 20, 12),
+                  children: [
+                    for (var i = 0; i < kChangelog.length; i++)
+                      _ChangelogEntry(item: kChangelog[i], s: s, latest: i == 0),
+                  ],
+                ),
+              ),
             ],
-          ],
+          ),
         ),
       );
     },
   );
+}
+
+/// One release in the changelog: the newest is open, older ones fold away.
+class _ChangelogEntry extends StatelessWidget {
+  final ChangelogItem item;
+  final Settings s;
+  final bool latest;
+  const _ChangelogEntry({required this.item, required this.s, required this.latest});
+
+  Widget _chip(String text, Color bg, Color fg) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
+        child: Text(text,
+            style: TextStyle(color: fg, fontWeight: FontWeight.w800, fontSize: 12)),
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(18));
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Container(
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: latest ? cs.primary.withAlpha(16) : kCard2,
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: latest ? cs.primary.withAlpha(120) : kLine),
+        ),
+        child: Theme(
+          data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+          child: ExpansionTile(
+            initiallyExpanded: latest,
+            shape: shape,
+            collapsedShape: shape,
+            tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
+            expandedCrossAxisAlignment: CrossAxisAlignment.start,
+            title: Row(
+              children: [
+                _chip('${s.tr('update')} ${item.version}',
+                    latest ? cs.primary : const Color(0xFF262626),
+                    latest ? cs.onPrimary : Colors.white70),
+                if (latest) ...[
+                  const SizedBox(width: 8),
+                  _chip(s.tr('current'), cs.primary.withAlpha(34), cs.primary),
+                ],
+              ],
+            ),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(item.title(s.language),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w700, color: Colors.white, height: 1.3)),
+            ),
+            children: [
+              for (final line in item.lines(s.language))
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7),
+                        child: Container(
+                          width: 5,
+                          height: 5,
+                          decoration: BoxDecoration(color: cs.primary, shape: BoxShape.circle),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(line,
+                            style: const TextStyle(color: Colors.white70, height: 1.4)),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
