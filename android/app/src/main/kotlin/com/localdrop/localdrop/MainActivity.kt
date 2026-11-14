@@ -1,4 +1,3 @@
-
 package com.localdrop.localdrop
 
 import android.os.Build
@@ -8,37 +7,36 @@ import io.flutter.embedding.android.FlutterActivity
 class MainActivity : FlutterActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestHighRefreshRate()
+        enableHighRefreshRate()
     }
 
-    override fun onResume() {
-        super.onResume()
-        requestHighRefreshRate()
-    }
+    private fun enableHighRefreshRate() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            try {
+                val display = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    this.display
+                } else {
+                    @Suppress("DEPRECATION")
+                    windowManager.defaultDisplay
+                } ?: return
 
-    @Suppress("DEPRECATION")
-    private fun requestHighRefreshRate() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return
+                val modes = display.supportedModes
+                val currentMode = display.mode
+                val bestMode = modes
+                    .filter {
+                        it.physicalWidth == currentMode.physicalWidth &&
+                            it.physicalHeight == currentMode.physicalHeight
+                    }
+                    .maxByOrNull { it.refreshRate }
 
-        try {
-            val display = windowManager.defaultDisplay
-            val current = display.mode
-
-            val best = display.supportedModes
-                .filter {
-                    it.physicalWidth == current.physicalWidth &&
-                    it.physicalHeight == current.physicalHeight
+                if (bestMode != null && bestMode.modeId != currentMode.modeId) {
+                    val params = window.attributes
+                    params.preferredDisplayModeId = bestMode.modeId
+                    window.attributes = params
                 }
-                .maxByOrNull { it.refreshRate } ?: return
-
-            val lp = window.attributes
-            lp.preferredDisplayModeId = best.modeId
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                lp.preferredRefreshRate = best.refreshRate
+            } catch (_: Throwable) {
+                // Safe fallback if the OEM window manager restricts mode switching
             }
-
-            window.attributes = lp
-        } catch (_: Exception) {}
+        }
     }
 }
