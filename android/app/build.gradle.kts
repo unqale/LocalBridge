@@ -4,10 +4,21 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val releaseSigning = listOf(
+    "LOCALBRIDGE_KEYSTORE",
+    "LOCALBRIDGE_STORE_PASSWORD",
+    "LOCALBRIDGE_KEY_ALIAS",
+    "LOCALBRIDGE_KEY_PASSWORD",
+).associateWith { providers.environmentVariable(it).orNull }
+val hasReleaseSigning = releaseSigning.values.all { !it.isNullOrBlank() }
+check(hasReleaseSigning || releaseSigning.values.all { it.isNullOrBlank() }) {
+    "Set all four LocalBridge release signing environment variables."
+}
+
 android {
     namespace = "com.localdrop.localdrop"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "30.0.16248370"
+    ndkVersion = flutter.ndkVersion
 
 
     compileOptions {
@@ -30,11 +41,18 @@ android {
         versionName = flutter.versionName
     }
 
+    if (hasReleaseSigning) {
+        signingConfigs.create("release") {
+            storeFile = file(releaseSigning.getValue("LOCALBRIDGE_KEYSTORE")!!)
+            storePassword = releaseSigning.getValue("LOCALBRIDGE_STORE_PASSWORD")
+            keyAlias = releaseSigning.getValue("LOCALBRIDGE_KEY_ALIAS")
+            keyPassword = releaseSigning.getValue("LOCALBRIDGE_KEY_PASSWORD")
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName(if (hasReleaseSigning) "release" else "debug")
         }
     }
 }

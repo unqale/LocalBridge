@@ -1,0 +1,46 @@
+name: Experimental Linux smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.50.0'
+          cache: true
+      - name: Install Linux build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstdc++-12-dev xvfb xauth libgl1-mesa-dri
+      - name: Generate an experimental desktop runner
+        run: flutter create --platforms=linux --project-name localbridge --no-pub .
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build linux --release
+      - name: Launch under Xvfb
+        shell: bash
+        run: |
+          set +e
+          timeout 12s xvfb-run -a env LIBGL_ALWAYS_SOFTWARE=1 +            build/linux/x64/release/bundle/localbridge > linux-smoke.log 2>&1
+          result=$?
+          cat linux-smoke.log
+          if [[ $result -ne 124 ]]; then
+            echo "LocalBridge exited during startup (status $result)"
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linux-smoke-log
+          path: linux-smoke.log
+          if-no-files-found: ignore
