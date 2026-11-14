@@ -1,10 +1,12 @@
 name: Release
 
-# Runs when you push a tag like v2.1.0
+# Runs when you push a version tag.
 on:
   push:
     tags:
       - 'v*'
+      # This beta uses the packages uploaded manually in GitHub Releases.
+      - '!v3.0.6-beta'
 
 permissions:
   contents: write
@@ -14,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .   # change to "app" if your Flutter project lives in app/
+        working-directory: .
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -24,8 +26,11 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-version: '3.50.0'
           cache: true
       - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
       - run: flutter build apk --release --split-per-abi
       - name: Rename APKs
         run: |
@@ -43,14 +48,17 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: .   # change to "app" if your Flutter project lives in app/
+        working-directory: .
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-version: '3.50.0'
           cache: true
       - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
       - run: flutter build windows --release
       - name: Zip
         shell: pwsh
@@ -70,7 +78,19 @@ jobs:
         with:
           path: artifacts
           merge-multiple: true
+      - name: Verify and checksum packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd artifacts
+          test -n "$(find . -maxdepth 1 -name '*.apk' -print -quit)"
+          test -n "$(find . -maxdepth 1 -name '*.zip' -print -quit)"
+          for package in ./*.apk ./*.zip; do
+            unzip -tq "$package"
+          done
+          sha256sum -- *.apk *.zip > SHA256SUMS.txt
       - uses: softprops/action-gh-release@v2
         with:
           files: artifacts/*
+          prerelease: ${{ contains(github.ref_name, '-beta') }}
           generate_release_notes: true
